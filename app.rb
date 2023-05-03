@@ -4,7 +4,7 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 
-set :database, {adapter: "sqlite3", database: "barbershop.db"}
+set :database, {adapter: "sqlite3", database: "leprosorium.db"}
 
 class Posts  < ActiveRecord::Base
 end
@@ -18,46 +18,26 @@ end
 #end
 
 
-
-
 get '/' do
 	# выбираем список постов из БД
 
-	# @results = @db.execute 'select * from Posts order by id desc'
+	# @comments=Posts.all
 
 	erb :index			
 end
 
-# обработчик get-запроса /new
-# (браузер получает страницу с сервера)
 
 get '/new' do
 	erb :new
 end
 
-# обработчик post-запроса /new
-# (браузер отправляет данные на сервер)
-
 post '/new' do
-	# получаем переменную из post-запроса
-	content = params[:content]
-	username= params[:user]
-
-	hash={:content=>'Enter content',:user=>'Enter you name'}
-
-	hash.each do |key,value|
-		if params[key]==''
-			@error=hash[key]
-			return erb :new
-		end
-	end
-
-	# сохранение данных в БД
-
-	# @db.execute 'insert into Posts (user,content, created_date) values (?,?, datetime())', [username,content]
-
-	# # перенаправление на главную страницу
-
+	# content = params[:content]
+	# username= params[:user]
+	 p=Posts.new
+	 p.content=@content
+	 p.name=@name
+	 p.save
 	# redirect to '/'
 end
 
