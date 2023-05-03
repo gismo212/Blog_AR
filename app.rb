@@ -7,20 +7,17 @@ require 'sinatra/activerecord'
 set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 class Posts  < ActiveRecord::Base
-
 end
+
+class Comments < ActiveRecord::Base
+end
+
 #before do
 	# индициализация БД
 #	init_db
 #end
 
 
-# 	@db.execute 'create table if not exists Comments
-# 	(
-# 		id INTEGER PRIMARY KEY AUTOINCREMENT,
-# 		created_date DATE,
-# 		content TEXT,
-# 		post_id integer
 
 
 get '/' do
