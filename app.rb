@@ -32,12 +32,11 @@ get '/new' do
 end
 
 post '/new' do
-	# content = params[:content]
-	# username= params[:user]
-	 p=Posts.new
-	 p.content=@content
-	 p.name=@name
-	 p.save
+		p = Posts.new params[:post]
+  		p.save
+
+
+	 erb "<h2>Спасибо,вы записаны</h2>"
 	# redirect to '/'
 end
 
@@ -46,7 +45,7 @@ end
 get '/details/:post_id' do
 
 	# получаем переменную из url'a
-	post_id = params[:post_id]
+	# post_id = params[:post_id]
 
 	# получаем список постов
 	# # (у нас будет только один пост)
