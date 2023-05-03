@@ -1,0 +1,58 @@
+# если сделать репозиторий через ungit и после хотите обьеденить с репозиторием на гит хаб
+# оманды дл€ св€зывани€ созданного файла с уже имеющимис€ файлами
+
+Еor push an existing repository from the command line
+
+
+git remote add origin git@github.com:gismo212/Lesson---28.git
+git branch -M main
+git push -u origin main
+
+
+
+#дл€ того что бы не перезапускать приложение много раз ,прописываем следующую команду
+
+require 'sinatra/reloader'
+
+
+
+placeholder="Type post text here"  #атрибут дающий описание 
+		<textarea name="content" class="form-control" rows="6" placeholder="Type post text here"></textarea>
+
+
+
+
+@db.results_us_hash= true # результаты будут возвращатс€ в виде хэша 
+
+
+написанные файлы в .gitignore не будут комититс€
+
+datetime вставл€ет теущее врем€  в бд 
+insert into posts (content,created_date) values('opa',datetime());
+
+
+
+команда осуществл€юща€ перенаправление на другую страницу
+redirect to '/' 
+
+
+создание ссылки <a href="">text</a>
+<a href="/post/<%=os['created_date']%>">Comments</a>
+
+
+get '/details/:id' синатра будет понимать что это идентификатор
+
+получение id поста
+id поста:
+
+get '/post/:post_id' do
+  @post_id = params[:post_id]
+  erb :post
+end
+
+
+
+@results=@db.execute'select *from Posts where id=?',[] # будем передовать все посты с определенным айдишником
+
+
+
